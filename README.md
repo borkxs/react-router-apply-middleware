@@ -47,3 +47,16 @@ useScrollBehavior()
 
 etc.
 
+## Using Middleware with RelayRouter
+
+```js
+let RelayRouterContext = require("react-router-relay/lib/RelayRouterContext")
+let applyMiddlewareWithContext = require("react-router-apply-middleware/lib/applyMiddleWareWithContext").default
+let { useRelativeLinks } = require("react-router-relative-links")
+class CustomRelayRouter extends RelayRouter {
+  // RelayRouter uses Router render prop but doesn't expose its own render prop
+  renderRouterContext(props) {
+    return applyMiddlewareWithContext(RelayRouterContext)(useRelativeLinks())(props)
+  }
+}
+```
