@@ -1,3 +1,3 @@
-import applyMiddlewareWithContext from 'applyMiddlewareWithContext'
+import applyMiddlewareWithContext from './applyMiddlewareWithContext'
 
 export default applyMiddlewareWithContext()
